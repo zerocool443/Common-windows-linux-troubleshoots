@@ -1,0 +1,9 @@
+sudo ufw allow out 53
+
+sudo ufw disable;
+
+sudo ufw enableecho "nameserver 8.8.4.4" | sudo tee /etc/resolvconf/resolv.conf.d/base
+
+echo "nameserver 8.8.8.8" | sudo tee -a /etc/resolvconf/resolv.conf.d/base
+
+sudo resolvconf -u
